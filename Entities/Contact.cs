@@ -11,6 +11,5 @@ namespace ContactManangement.Entities
         public int ContactPhone { get; set; }
         public string ContactEmail { get; set; } = string.Empty;     
         public string ContactAddress { get; set; } = string.Empty;
-              
     }
 }

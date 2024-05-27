@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContactManangement.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/contact")]
     [ApiController]
     public class ContactManagementController : ControllerBase
     {
@@ -37,7 +37,7 @@ namespace ContactManangement.Controllers
         }
 
         [HttpPost]
-        [Route("AddContact")]
+        [Route("CreateContact")]
         public async Task<InternalResponse> Post(ContactDto contactDto)
         {
             //if (contactModel is null) return BadRequest();

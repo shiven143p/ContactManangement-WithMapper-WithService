@@ -41,31 +41,12 @@ namespace ContactManangement.Services
         public async Task<InternalResponse> AddContactAsync(ContactDto contactDto)
         {
             Contact contact = _mapper.Map<Contact>(contactDto);
-
-            //Contact contact = new Contact
-            //{
-            //    ContactId = string.IsNullOrEmpty(contactDto.ContactId) ? Guid.NewGuid().ToString(): contactDto.ContactId,
-            //    ContactName = contactDto.ContactName,
-            //    ContactPhone = contactDto.ContactPhone,
-            //    ContactEmail = contactDto.ContactEmail,
-            //    ContactAddress = contactDto.ContactAddress
-            //};
-
             _internalResponse.Result = await _contactRepository.AddContactAsync(contact) > 0 ? "Contact Added Successfully" : "";
             return _internalResponse;
         }
 
         public async Task<InternalResponse> UpdateContactAsync(ContactDto contactDto)
         {
-            //Contact contact = new()
-            //{
-            //    ContactId = contactDto.ContactId,
-            //    ContactName = contactDto.ContactName,
-            //    ContactPhone = contactDto.ContactPhone,
-            //    ContactEmail = contactDto.ContactEmail,
-            //    ContactAddress = contactDto.ContactAddress,
-            //};
-         
             Contact contact = _mapper.Map<Contact>(contactDto);
             _internalResponse.Result = await _contactRepository.UpdateContactAsync(contact) > 0 ? "Contact Updated Successfully" : ""; ;
             return _internalResponse;
